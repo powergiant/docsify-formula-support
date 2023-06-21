@@ -1,0 +1,56 @@
+{
+    "div":{
+      "scope": "markdown",
+      "prefix": ["div"],
+      "body": ["<div>$1</div>$2"],
+      "description": "The div block."
+    },
+    "aref": {
+      "scope": "markdown",
+      "prefix": ["aref"],
+      "body": ["<a class = 'reference' onclick='jump(\"$1\", \"$2\")'>$3</a>$4"],
+      "description": "The a reference block."
+    },
+    "pdef": {
+      "scope": "markdown",
+      "prefix": ["pdefinition"],
+      "body": ["<p id = '$1' class = 'definition'>$2</p>"],
+      "description": "The p definition block."
+    },
+    "pexample": {
+      "scope": "markdown",
+      "prefix": ["pexample"],
+      "body": ["<p id = '$1' class = 'example'>$2</p>"],
+      "description": "The p example block."
+    },
+    "ins": {
+      "scope": "markdown",
+      "prefix": ["ins"],
+      "body": ["<ins>$1</ins>$2"],
+      "description": "The ins block."
+    },
+    "li": {
+      "scope": "markdown",
+      "prefix": ["li"],
+      "body": ["<li>$1</li>"],
+      "description": "The li block."
+    },
+    "ul": {
+      "scope": "markdown",
+      "prefix": ["ul"],
+      "body": ["<ul>\r\n  <li>$1</li>\r\n</ul>"],
+      "description": "The ul block."
+    },
+    "italics": {
+      "scope": "markdown",
+      "prefix": ["italics"],
+      "body": ["<i>$1</i>"],
+      "description": "The italics block."
+    }
+    // "chapter_numbering": {
+    //   "scope": "markdown",
+    //   "prefix": ["chapnum", "chapter numbering"],
+    //   "body": ["<div id = '$1' class='chapter_numbering'></div>$2"],
+    //   "description": "The chapter numbering block."
+    // }
+}
