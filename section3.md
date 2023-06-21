@@ -42,6 +42,14 @@ A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 </p>
 
+<p id = 'something' class = 'theorem'>
+A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
+</p>
+
+<p id = 'something' class = 'lemma'>something</p>
+
+<p id = 'something' class = 'proposition'>something</p>
+
 ## section 3.2 title
 
 something

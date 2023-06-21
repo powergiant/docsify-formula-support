@@ -23,6 +23,30 @@
       "body": ["<p id = '$1' class = 'example'>$2</p>"],
       "description": "The p example block."
     },
+    "ptheorem": {
+      "scope": "markdown",
+      "prefix": ["ptheorem"],
+      "body": ["<p id = '$1' class = 'theorem'>$2</p>"],
+      "description": "The p theorem block."
+    },
+    "premark": {
+      "scope": "markdown",
+      "prefix": ["premark"],
+      "body": ["<p id = '$1' class = 'remark'>$2</p>"],
+      "description": "The p remark block."
+    },
+    "pproposition": {
+      "scope": "markdown",
+      "prefix": ["pproposition"],
+      "body": ["<p id = '$1' class = 'proposition'>$2</p>"],
+      "description": "The p proposition block."
+    },
+    "plemma": {
+      "scope": "markdown",
+      "prefix": ["plemma"],
+      "body": ["<p id = '$1' class = 'lemma'>$2</p>"],
+      "description": "The p lemma block."
+    },
     "ins": {
       "scope": "markdown",
       "prefix": ["ins"],
