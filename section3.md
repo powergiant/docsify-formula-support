@@ -18,7 +18,7 @@ A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 <ul>
   <li>
     <i>something.</i> something
-    <div sketch = 'newton'> 
+    <div ref_label = 'newton'> 
         $$
         \frac{dx_i}{dt} = v_i,\qquad \frac{dv_i}{dt} = -\sum_{j\ne i}\nabla\Phi(x_i - x_j).  \tag{N}
         $$

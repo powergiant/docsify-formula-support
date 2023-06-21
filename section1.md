@@ -1,12 +1,12 @@
-# 1. section 1 title
+# 1. section 1 title [ref_label = "a section"]
 <!-- # section 1 title -->
 
-## section 1.1 title
+## section 1.1 title [ref_label = 'another section']
 
 the <a class = 'reference' onclick='jump("something_example", "")'> example </a> 
 
 
-<p sketch = 'definition of something' class = 'definition'> 
+<p sketch = 'definition of something' class = 'definition' ref_label = 'a definition'> 
 A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 </p>
 
@@ -16,9 +16,9 @@ A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 
 <ul>
-  <li>
+  <li ref_label = 'one item'>
     <i>something.</i> something
-    <div id = 'newton'> 
+    <div ref_label = 'newton'> 
         $$
         \frac{dx_i}{dt} = v_i,\qquad \frac{dv_i}{dt} = -\sum_{j\ne i}\nabla\Phi(x_i - x_j).  \tag{N}
         $$
@@ -63,7 +63,7 @@ A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 
 ## section 1.2 title
 
-### section 1.2.1 title
+### section 1.2.1 title [ref_label = 'one more section']
 
 something Theorem 1.1 is good
 
@@ -91,9 +91,23 @@ something
 
 something
 
+**Some tests of jump**
+
 <span onclick="jump('newton')"> (N)</span>   
 
-<span onclick="jump('some equation')"> (N)</span>   
+<span onclick="jump('some equation')"> (N)</span>  
 
+<span onclick="jump('Section 1')"> Section 1</span>  
 
+<span onclick="jump('a definition')"> Definition 1.1</span>  
+
+<span onclick="jump('a section')"> Section 1</span>  
+
+<span onclick="jump('another section')"> Section 1.1</span>  
+
+<span onclick="jump('one more section')"> Section 1.2.1</span>  
+
+<span onclick="jump('one item')"> one item</span> 
+
+<div class = 'reference' > asd</div>
 

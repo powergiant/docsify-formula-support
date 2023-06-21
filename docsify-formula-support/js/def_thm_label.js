@@ -1,8 +1,11 @@
 function set_front_matter(node, counters){
     if (node.nodeType === Node.ELEMENT_NODE) {
-        if (node.nodeName.match(/H[2-3]/)){
+        if (node.nodeName.match(/H[1-3]/)){
             let index = parseInt(node.nodeName[1]);
-            if (index === 2){
+            if (index === 1){
+                h1_front_matter(node, counters);
+            }
+            else if (index === 2){
                 counters.h2_num++;
                 counters.h3_num = 0;
                 if (counters.chap_num == null){
@@ -51,12 +54,14 @@ function set_front_matter(node, counters){
 function h1_front_matter(element_h1, counters){
     var name;
     if (counters.chap_num){
-        name = counters.chap_num + '.' + counters.h2_num;
+        name = counters.chap_num;
+        element_h1.setAttribute('name', 'Section ' + name);
     }
-    else{
-        name = counters.h2_num;
+
+    let ref_label = div_match_and_replace(element_h1);
+    if (ref_label){
+        element_h1.setAttribute('ref_label',  ref_label);
     }
-    element_h1.setAttribute('name', name);
 }
 
 
@@ -69,7 +74,12 @@ function h2_front_matter(element_h2, counters){
         name = counters.h2_num;
     }
     element_h2.textContent = name + '. ' + element_h2.textContent;
-    element_h2.setAttribute('name', name);
+    element_h2.setAttribute('name', 'Section ' + name);
+
+    let ref_label = div_match_and_replace(element_h2);
+    if (ref_label){
+        element_h2.setAttribute('ref_label', ref_label);
+    }
 }
 
 function h3_front_matter(element_h3, counters){
@@ -81,9 +91,25 @@ function h3_front_matter(element_h3, counters){
         name = counters.h2_num + '.' + counters.h3_num;
     }
     element_h3.textContent = name + '. ' + element_h3.textContent;
-    element_h3.setAttribute('name', name);
+    element_h3.setAttribute('name', 'Section ' + name);
+
+    let ref_label = div_match_and_replace(element_h3);
+    if (ref_label){
+        element_h3.setAttribute('ref_label', ref_label);
+    }
 }
 
+function div_match_and_replace(element_h){
+    let text = element_h.textContent;
+    let match_result = text.match(/\[\s*ref_label\s*=\s*["|'](.*?)["|']\s*\]/);
+    var ref_label = null;
+
+    if (match_result){
+        ref_label = match_result[1];
+        element_h.textContent = text.replace(/\[\s*ref_label\s*=\s*["|'](.*?)["|']\s*\]/, '');
+    }
+    return ref_label;
+}
 
 
 function definition_front_matter(element_def, counters){
@@ -214,6 +240,7 @@ function get_chapter_number(heading_element){
 
 (function () {
     var labelPlugin = function (hook) {
+
         hook.doneEach(function(){
             
         var mainHeading = document.querySelector('h1');

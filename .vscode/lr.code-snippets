@@ -5,6 +5,12 @@
       "body": ["<div>$1</div>$2"],
       "description": "The div block."
     },
+    "divreflabel":{
+      "scope": "markdown",
+      "prefix": ["divreflabel"],
+      "body": ["<div ref_label = '$1'></div>$2"],
+      "description": "The div ref_label block."
+    },
     "aref": {
       "scope": "markdown",
       "prefix": ["aref"],
