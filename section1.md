@@ -6,13 +6,13 @@
 the <a class = 'reference' onclick='jump("something_example", "")'> example </a> 
 
 
-<p id = 'definition of something' class = 'definition'> 
+<p sketch = 'definition of something' class = 'definition'> 
 A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 </p>
 
 
 
-<p id = 'definition of something' class = 'definition'> 
+<p sketch = 'definition of something' class = 'definition'> 
 A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 
 <ul>
@@ -23,6 +23,11 @@ A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
         \frac{dx_i}{dt} = v_i,\qquad \frac{dv_i}{dt} = -\sum_{j\ne i}\nabla\Phi(x_i - x_j).  \tag{N}
         $$
     </div>
+    <div class = 'equation' ref_label = 'some equation'>
+        $$
+            f(x) = x^2
+        $$
+    </div>
   </li>
   <li>
     <i>something.</i> something
@@ -30,30 +35,30 @@ A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 </ul>
 </p>
 
-<p id = 'definition of something' class = 'definition'> 
+<p sketch = 'definition of something' class = 'definition'> 
 A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 </p>
 
-<p id = 'something_example' class = 'example'>
+<p sketch = 'something_example' class = 'example'>
 A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 </p>
 
-<p id = 'something' class = 'example'>
+<p sketch = 'something' class = 'example'>
 A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 </p>
 
-<p id = 'something' class = 'theorem'>
+<p sketch = 'something' class = 'theorem'>
 A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 </p>
 
-<p id = 'something' class = 'remark'>
+<p sketch = 'something' class = 'remark'>
 A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 </p>
 
 
-<p id = 'something' class = 'lemma'>something</p>
+<p sketch = 'something' class = 'lemma'>something</p>
 
-<p id = 'something' class = 'proposition'>something</p>
+<p sketch = 'something' class = 'proposition'>something</p>
 
 
 ## section 1.2 title
@@ -62,7 +67,7 @@ A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 
 something Theorem 1.1 is good
 
-<p id = 'definition of something' class = 'definition'> 
+<p sketch = 'definition of something' class = 'definition'> 
 A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 </p>
 
@@ -72,7 +77,7 @@ A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 
 something
 
-<p id = 'definition of something' class = 'definition'> 
+<p sketch = 'definition of something' class = 'definition'> 
 A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 </p>
 
@@ -87,5 +92,8 @@ something
 something
 
 <span onclick="jump('newton')"> (N)</span>   
+
+<span onclick="jump('some equation')"> (N)</span>   
+
 
 
