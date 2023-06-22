@@ -11,12 +11,12 @@
       "body": ["<div ref_label = '$1'></div>$2"],
       "description": "The div ref_label block."
     },
-    "aref": {
-      "scope": "markdown",
-      "prefix": ["aref"],
-      "body": ["<a class = 'reference' onclick='jump(\"$1\", \"$2\")'>$3</a>$4"],
-      "description": "The a reference block."
-    },
+    // "aref": {
+    //   "scope": "markdown",
+    //   "prefix": ["aref"],
+    //   "body": ["<a class = 'reference' onclick='jump(\"$1\", \"$2\")'>$3</a>$4"],
+    //   "description": "The a reference block."
+    // },
     "pdef": {
       "scope": "markdown",
       "prefix": ["pdefinition"],
@@ -58,6 +58,18 @@
       "prefix": ["dequation", "divequation"],
       "body": ["<div sketch = '$1' class = 'equation'>\n    \\$\\$\n        $2\n    \\$\\$\n</div>"],
       "description": "The div equation block."
+    },
+    "divreference": {
+      "scope": "markdown",
+      "prefix": ["dreference", "divreference"],
+      "body": ["<div ref = '$1' class = 'reference'>$2</div>$3"],
+      "description": "The div reference block."
+    },
+    "areference": {
+      "scope": "markdown",
+      "prefix": ["areference"],
+      "body": ["<a ref = '$1' class = 'reference'>$2</a>$3"],
+      "description": "The a reference block."
     },
     "ins": {
       "scope": "markdown",

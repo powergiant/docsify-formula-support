@@ -18,7 +18,7 @@ A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 <ul>
   <li ref_label = 'one item'>
     <i>something.</i> something
-    <div ref_label = 'newton'> 
+    <div class = 'equation' ref_label = 'newton'> 
         $$
         \frac{dx_i}{dt} = v_i,\qquad \frac{dv_i}{dt} = -\sum_{j\ne i}\nabla\Phi(x_i - x_j).  \tag{N}
         $$
@@ -39,7 +39,7 @@ A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 </p>
 
-<p sketch = 'something_example' class = 'example'>
+<p ref_label = 'something_example' sketch = 'something_example' class = 'example'>
 A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 </p>
 
@@ -109,5 +109,6 @@ something
 
 <span onclick="jump('one item')"> one item</span> 
 
-<div class = 'reference' > asd</div>
+<a ref = 'newton' class = 'reference'></a>
+
 

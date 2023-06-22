@@ -44,9 +44,9 @@ function set_front_matter(node, counters){
         else if (node.classList.contains('equation')){
             equation_front_matter(node, counters);
         }
-        // else if (node.classList.contains('reference')){
-        //     reference_front_matter(node, counters);
-        // }
+        else if (node.classList.contains('sidebar-nav')){
+            div_match_and_replace(node);
+        }
     }
     node.childNodes.forEach((child) => set_front_matter(child, counters));
 }
@@ -100,13 +100,13 @@ function h3_front_matter(element_h3, counters){
 }
 
 function div_match_and_replace(element_h){
-    let text = element_h.textContent;
-    let match_result = text.match(/\[\s*ref_label\s*=\s*["|'](.*?)["|']\s*\]/);
+    let html = element_h.innerHTML;
+    let match_result = html.match(/\[\s*ref_label\s*=\s*["|'](.*?)["|']\s*\]/);
     var ref_label = null;
 
     if (match_result){
         ref_label = match_result[1];
-        element_h.textContent = text.replace(/\[\s*ref_label\s*=\s*["|'](.*?)["|']\s*\]/, '');
+        element_h.innerHTML = html.replace(/\[\s*ref_label\s*=\s*["|'](.*?)["|']\s*\]/g, '');
     }
     return ref_label;
 }
@@ -220,9 +220,16 @@ function equation_front_matter(element_equation, counters){
     element_equation.setAttribute('name', name);
 }
 
-function reference_front_matter(element_ref, counters){
-    alert('The function reference_front_matter is not implemented.')
-    throw new Error("Not Implemented");
+function reference_front_matter(element_ref){
+    ref_label = element_ref.getAttribute('ref');
+    if (ref_label){
+        if (element_ref.innerHTML.match(/^\s*$/)!==null){
+            element = document.querySelector('[ref_label="' + ref_label + '"]');
+            element_ref.innerHTML = element.getAttribute('name');
+        } 
+        onclick_str =  `jump('${ref_label}', '')`;
+        element_ref.setAttribute("onclick", onclick_str);
+    }
 }
 
 function get_chapter_number(heading_element){
@@ -240,9 +247,20 @@ function get_chapter_number(heading_element){
 
 (function () {
     var labelPlugin = function (hook) {
+        // hook.afterEach(function(html){
+        //     var elements = document.getElementsByTagName('h3');
+        //     for (let i = 0; i < elements.length; i++) {
+        //         let element = elements[i];
+        //         let ref_label = div_match_and_replace(element);
+        //         if (ref_label){
+        //             element.setAttribute('ref_label', ref_label);
+        //         }
+        //     }
+        //     return html;
+        // });
 
         hook.doneEach(function(){
-            
+        
         var mainHeading = document.querySelector('h1');
         var chap_num = get_chapter_number(mainHeading);
 
@@ -258,6 +276,12 @@ function get_chapter_number(heading_element){
             eq_num: eq_num
         };
         set_front_matter(document.body, counters);
+
+        var references = document.getElementsByClassName('reference');
+        for (let i = 0; i < references.length; i++) {
+            let reference = references[i];
+            reference_front_matter(reference);
+          }
         });        
       };
 $docsify = $docsify || {};
