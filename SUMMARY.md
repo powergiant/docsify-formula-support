@@ -1,4 +1,4 @@
-<font size="5">&nbsp; **Test project**</font>
+<!-- <font size="5">&nbsp; **Test project**</font> -->
 
 - [**section 1 title**](./section1.md)
 - [**section 2 title**](./section2.md)

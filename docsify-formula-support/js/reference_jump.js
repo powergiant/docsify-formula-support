@@ -34,13 +34,13 @@ function jump_out_page(element_ref_label, page){
         } else {
             window.location.href = '/#/./' + page;// + '?id=' + element_ref_label;
         }
-        window.location.reload();
+        // window.location.reload();
     };
 };
 
 (function () {
     var scrollPlugin = function (hook) {
-        hook.ready(function(){
+        hook.doneEach(function(){
             var element_ref_label = localStorage.getItem('scroll id');
             localStorage.removeItem('scroll id');
             

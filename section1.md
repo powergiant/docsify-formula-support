@@ -10,7 +10,7 @@ the <a class = 'reference' onclick='jump("something_example", "")'> example </a>
 A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.
 </p>
 
-
+<p sketch = '' class = 'definition'>definition with no sketch</p>
 
 <p sketch = 'definition of something' class = 'definition'> 
 A <ins>something</ins> consists of <ins>something</ins> $some\ formula$.

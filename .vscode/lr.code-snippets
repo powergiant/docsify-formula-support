@@ -1,104 +1,128 @@
 {
-    "div":{
-      "scope": "markdown",
-      "prefix": ["div"],
-      "body": ["<div>$1</div>$2"],
-      "description": "The div block."
-    },
-    "divreflabel":{
-      "scope": "markdown",
-      "prefix": ["divreflabel"],
-      "body": ["<div ref_label = '$1'></div>$2"],
-      "description": "The div ref_label block."
-    },
-    // "aref": {
-    //   "scope": "markdown",
-    //   "prefix": ["aref"],
-    //   "body": ["<a class = 'reference' onclick='jump(\"$1\", \"$2\")'>$3</a>$4"],
-    //   "description": "The a reference block."
-    // },
-    "pdef": {
-      "scope": "markdown",
-      "prefix": ["pdefinition"],
-      "body": ["<p sketch = '$1' class = 'definition'>$2</p>"],
-      "description": "The p definition block."
-    },
-    "pexample": {
-      "scope": "markdown",
-      "prefix": ["pexample"],
-      "body": ["<p sketch = '$1' class = 'example'>$2</p>"],
-      "description": "The p example block."
-    },
-    "ptheorem": {
-      "scope": "markdown",
-      "prefix": ["ptheorem"],
-      "body": ["<p sketch = '$1' class = 'theorem'>$2</p>"],
-      "description": "The p theorem block."
-    },
-    "premark": {
-      "scope": "markdown",
-      "prefix": ["premark"],
-      "body": ["<p sketch = '$1' class = 'remark'>$2</p>"],
-      "description": "The p remark block."
-    },
-    "pproposition": {
-      "scope": "markdown",
-      "prefix": ["pproposition"],
-      "body": ["<p sketch = '$1' class = 'proposition'>$2</p>"],
-      "description": "The p proposition block."
-    },
-    "plemma": {
-      "scope": "markdown",
-      "prefix": ["plemma"],
-      "body": ["<p sketch = '$1' class = 'lemma'>$2</p>"],
-      "description": "The p lemma block."
-    },
-    "divequation": {
-      "scope": "markdown",
-      "prefix": ["dequation", "divequation"],
-      "body": ["<div sketch = '$1' class = 'equation'>\n    \\$\\$\n        $2\n    \\$\\$\n</div>"],
-      "description": "The div equation block."
-    },
-    "divreference": {
-      "scope": "markdown",
-      "prefix": ["dreference", "divreference"],
-      "body": ["<div ref = '$1' class = 'reference'>$2</div>$3"],
-      "description": "The div reference block."
-    },
-    "areference": {
-      "scope": "markdown",
-      "prefix": ["areference"],
-      "body": ["<a ref = '$1' class = 'reference'>$2</a>$3"],
-      "description": "The a reference block."
-    },
-    "ins": {
-      "scope": "markdown",
-      "prefix": ["ins"],
-      "body": ["<ins>$1</ins>$2"],
-      "description": "The ins block."
-    },
-    "li": {
-      "scope": "markdown",
-      "prefix": ["li"],
-      "body": ["<li>$1</li>"],
-      "description": "The li block."
-    },
-    "ul": {
-      "scope": "markdown",
-      "prefix": ["ul"],
-      "body": ["<ul>\r\n  <li>$1</li>\r\n</ul>"],
-      "description": "The ul block."
-    },
-    "italics": {
-      "scope": "markdown",
-      "prefix": ["italics"],
-      "body": ["<i>$1</i>"],
-      "description": "The italics block."
-    }
-    // "chapter_numbering": {
-    //   "scope": "markdown",
-    //   "prefix": ["chapnum", "chapter numbering"],
-    //   "body": ["<div id = '$1' class='chapter_numbering'></div>$2"],
-    //   "description": "The chapter numbering block."
-    // }
+  "div":{
+    "scope": "markdown",
+    "prefix": ["div"],
+    "body": ["<div>$1</div>$2"],
+    "description": "The div block."
+  },
+  "spanreflabel":{
+    "scope": "markdown",
+    "prefix": ["sreflabel"],
+    "body": ["<span ref_label = '$1'></span>$2"],
+    "description": "The span ref_label block."
+  },
+  "ajump": {
+    "scope": "markdown",
+    "prefix": ["ajump"],
+    "body": ["<a onclick='jump(\"$1\", \"$2\")'>$3</a>$4"],
+    "description": "The a jump block."
+  },
+  "pdef": {
+    "scope": "markdown",
+    "prefix": ["pdefinition"],
+    "body": ["<p sketch = '$1' class = 'definition'>$2</p>"],
+    "description": "The p definition block."
+  },
+  "pexample": {
+    "scope": "markdown",
+    "prefix": ["pexample"],
+    "body": ["<p sketch = '$1' class = 'example'>$2</p>"],
+    "description": "The p example block."
+  },
+  "ptheorem": {
+    "scope": "markdown",
+    "prefix": ["ptheorem"],
+    "body": ["<p sketch = '$1' class = 'theorem'>$2</p>"],
+    "description": "The p theorem block."
+  },
+  "premark": {
+    "scope": "markdown",
+    "prefix": ["premark"],
+    "body": ["<p sketch = '$1' class = 'remark'>$2</p>"],
+    "description": "The p remark block."
+  },
+  "pproposition": {
+    "scope": "markdown",
+    "prefix": ["pproposition"],
+    "body": ["<p sketch = '$1' class = 'proposition'>$2</p>"],
+    "description": "The p proposition block."
+  },
+  "plemma": {
+    "scope": "markdown",
+    "prefix": ["plemma"],
+    "body": ["<p sketch = '$1' class = 'lemma'>$2</p>"],
+    "description": "The p lemma block."
+  },
+  "pequation": {
+    "scope": "markdown",
+    "prefix": ["pequation", "pequation"],
+    "body": ["<p ref_label = '$1' class = 'equation'>\n    \\$\\$\n        $2\n    \\$\\$\n</p>"],
+    "description": "The p equation block."
+  },
+  "spanreference": {
+    "scope": "markdown",
+    "prefix": ["sreference", "spanreference"],
+    "body": ["<span ref = '$1' class = 'reference'>$2</span>$3"],
+    "description": "The span reference block."
+  },
+  "areference": {
+    "scope": "markdown",
+    "prefix": ["areference"],
+    "body": ["<a ref = '$1' class = 'reference'>$2</a>$3"],
+    "description": "The a reference block."
+  },
+  "ins": {
+    "scope": "markdown",
+    "prefix": ["ins"],
+    "body": ["<ins>$1</ins>$2"],
+    "description": "The ins block."
+  },
+  "li": {
+    "scope": "markdown",
+    "prefix": ["li"],
+    "body": ["<li>$1</li>"],
+    "description": "The li block."
+  },
+  "ul": {
+    "scope": "markdown",
+    "prefix": ["ul"],
+    "body": ["<ul>\r\n  <li>$1</li>\r\n</ul>"],
+    "description": "The ul block."
+  },
+  "italics": {
+    "scope": "markdown",
+    "prefix": ["italics"],
+    "body": ["<i>$1</i>"],
+    "description": "The italics block."
+  },
+  "lr()": {
+    "scope": "markdown, tex, latex",
+    "prefix": ["lr()"],
+    "body": ["\\left($1\\right)$2"],
+    "description": "The \\left(\\right) block."
+  },
+  "lr[]": {
+    "scope": "markdown, tex, latex",
+    "prefix": ["lr[]"],
+    "body": ["\\left[$1\\right]$2"],
+    "description": "The \\left[\\right] block."
+  },
+  "lr{}": {
+    "scope": "markdown, tex, latex",
+    "prefix": ["lr{}"],
+    "body": ["\\left\\{$1\\right\\}$2"],
+    "description": "The \\left\\{\\right\\} block."
+  },
+  "proof": {
+    "scope": "markdown",
+    "prefix": ["proofb"],
+    "body": ["**Proof.**$1\n    $2\n<span style=\"float: right\">\\$\\Box\\$</span>"],
+    "description": "The proof block."
+  }  
+  // "chapter_numbering": {
+  //   "scope": "markdown",
+  //   "prefix": ["chapnum", "chapter numbering"],
+  //   "body": ["<div id = '$1' class='chapter_numbering'></div>$2"],
+  //   "description": "The chapter numbering block."
+  // }
 }

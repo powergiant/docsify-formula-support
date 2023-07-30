@@ -68,5 +68,5 @@ something
 
 something
 
-<span onclick="jump('newton')"> (N)</span>   
+<span onclick="jump('newton', 'section1')"> (N)</span>   
 

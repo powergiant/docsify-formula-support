@@ -42,6 +42,7 @@ function set_front_matter(node, counters){
             proposition_front_matter(node, counters);
         }
         else if (node.classList.contains('equation')){
+            counters.eq_num++;
             equation_front_matter(node, counters);
         }
         else if (node.classList.contains('sidebar-nav')){
@@ -111,18 +112,26 @@ function div_match_and_replace(element_h){
     return ref_label;
 }
 
+function sketch_calcuate(sketch_text){
+    if(sketch_text){
+        return '<i style="color: gray;"> [' + sketch_text + '] </i>';
+    }
+    else{
+        return '';
+    }
+}
 
 function definition_front_matter(element_def, counters){
     var name, label, sketch;
     if (counters.chap_num){
         name = 'Definition ' + counters.chap_num /*+ '.' + counters.h2_num*/ + '.' + counters.def_thm_num;
         label = '<b>' + name + '. </b>';
-        sketch = '<i style="color: gray;"> [' + element_def.getAttribute('sketch') + '] </i>';
+        sketch = sketch_calcuate(element_def.getAttribute('sketch'));
     }
     else{
         name = 'Definition ' + counters.h2_num + '.' + counters.def_thm_num;
         label = '<b>' + name + '. </b>';
-        sketch = '<i style="color: gray;"> [' + element_def.getAttribute('sketch') + '] </i>';
+        sketch = sketch_calcuate(element_def.getAttribute('sketch'));
     }
     element_def.innerHTML = label + sketch + element_def.innerHTML;
     element_def.setAttribute('name', name);
@@ -134,12 +143,12 @@ function example_front_matter(element_example, counters){
     if (counters.chap_num){
         name = 'Example ' + counters.chap_num /*+ '.' + counters.h2_num*/ + '.' + counters.def_thm_num;
         label = '<b>' + name + '. </b>';
-        sketch = '<i style="color: gray;"> [' + element_example.getAttribute('sketch') + '] </i>';
+        sketch = sketch_calcuate(element_example.getAttribute('sketch'));
     }
     else{
         name = 'Example ' + counters.h2_num + '.' + counters.def_thm_num;
         label = '<b>' + name + '. </b>';
-        sketch = '<i style="color: gray;"> [' + element_example.getAttribute('sketch') + '] </i>';
+        sketch = sketch_calcuate(element_example.getAttribute('sketch'));
     }
     element_example.innerHTML = label + sketch + element_example.innerHTML;
     element_example.setAttribute('name', name);
@@ -150,12 +159,12 @@ function theorem_front_matter(element_theorem, counters){
     if (counters.chap_num){
         name = 'Theorem ' + counters.chap_num /*+ '.' + counters.h2_num*/ + '.' + counters.def_thm_num;
         label = '<b>' + name + '. </b>';
-        sketch = '<i style="color: gray;"> [' + element_theorem.getAttribute('sketch') + '] </i>';
+        sketch = sketch_calcuate(element_theorem.getAttribute('sketch'));
     }
     else{
         name = 'Theorem ' + counters.h2_num + '.' + counters.def_thm_num;
         label = '<b>' + name + '. </b>';
-        sketch = '<i style="color: gray;"> [' + element_theorem.getAttribute('sketch') + '] </i>';
+        sketch = sketch_calcuate(element_theorem.getAttribute('sketch'));
     }
     element_theorem.innerHTML = label + sketch + element_theorem.innerHTML;
     element_theorem.setAttribute('name', name);
@@ -166,12 +175,12 @@ function lemma_front_matter(element_lemma, counters){
     if (counters.chap_num){
         name = 'Lemma ' + counters.chap_num /*+ '.' + counters.h2_num*/ + '.' + counters.def_thm_num;
         label = '<b>' + name + '. </b>';
-        sketch = '<i style="color: gray;"> [' + element_lemma.getAttribute('sketch') + '] </i>';
+        sketch = sketch_calcuate(element_lemma.getAttribute('sketch'));
     }
     else{
         name = 'Lemma ' + counters.h2_num + '.' + counters.def_thm_num;
         label = '<b>' + name + '. </b>';
-        sketch = '<i style="color: gray;"> [' + element_lemma.getAttribute('sketch') + '] </i>';
+        sketch = sketch_calcuate(element_lemma.getAttribute('sketch'));
     }
     element_lemma.innerHTML = label + sketch + element_lemma.innerHTML;
     element_lemma.setAttribute('name', name);
@@ -182,12 +191,12 @@ function proposition_front_matter(element_proposition, counters){
     if (counters.chap_num){
         name = 'Proposition ' + counters.chap_num /*+ '.' + counters.h2_num*/ + '.' + counters.def_thm_num;
         label = '<b>' + name + '. </b>';
-        sketch = '<i style="color: gray;"> [' + element_proposition.getAttribute('sketch') + '] </i>';
+        sketch = sketch_calcuate(element_proposition.getAttribute('sketch'));
     }
     else{
         name = 'Proposition ' + counters.h2_num + '.' + counters.def_thm_num;
         label = '<b>' + name + '. </b>';
-        sketch = '<i style="color: gray;"> [' + element_proposition.getAttribute('sketch') + '] </i>';
+        sketch = sketch_calcuate(element_proposition.getAttribute('sketch'));
     }
     element_proposition.innerHTML = label + sketch + element_proposition.innerHTML;
     element_proposition.setAttribute('name', name);
@@ -198,12 +207,12 @@ function remark_front_matter(element_remark, counters){
     if (counters.chap_num){
         name = 'Remark';
         label = '<b>' + name + '. </b>';
-        sketch = '<i style="color: gray;"> [' + element_remark.getAttribute('sketch') + '] </i>';
+        sketch = sketch_calcuate(element_remark.getAttribute('sketch'));
     }
     else{
         name = 'Remark';
         label = '<b>' + name + '. </b>';
-        sketch = '<i style="color: gray;"> [' + element_remark.getAttribute('sketch') + '] </i>';
+        sketch = sketch_calcuate(element_remark.getAttribute('sketch'));
     }
     element_remark.innerHTML = label + sketch + element_remark.innerHTML;
     element_remark.setAttribute('name', name);
@@ -212,10 +221,10 @@ function remark_front_matter(element_remark, counters){
 function equation_front_matter(element_equation, counters){
     var name;
     if (counters.chap_num){
-        name = '(' + counters.chap_num /*+ '.' + counters.h2_num*/ + '.' + counters.def_thm_num + ')';
+        name = '(' + counters.chap_num /*+ '.' + counters.h2_num*/ + '.' + counters.eq_num + ')';
     }
     else{
-        name = '(' + counters.h2_num + '.' + counters.def_thm_num + ')';
+        name = '(' + counters.h2_num + '.' + counters.eq_num + ')';
     }
     element_equation.setAttribute('name', name);
 }
@@ -261,7 +270,8 @@ function get_chapter_number(heading_element){
 
         hook.doneEach(function(){
         
-        var mainHeading = document.querySelector('h1');
+        let mainContent = document.querySelector('section.content');
+        var mainHeading = mainContent.querySelector('h1');
         var chap_num = get_chapter_number(mainHeading);
 
         let h2_num = 0;
